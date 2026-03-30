@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Ashwa Guru</title>
-    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <meta name="description" content="Advanced horse racing handicapping terminal and quantitative analysis tool.">
     <meta property="og:title" content="Ashwa Guru Terminal">
     <meta property="og:description" content="Advanced horse racing handicapping terminal and quantitative analysis tool.">
-    <meta property="og:image" content="https://ashwaguru.in/logo.png">
+    <meta property="og:image" content="https://ashwaguru.in/favicon.png">
     <meta property="og:url" content="https://ashwaguru.in/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -19,12 +20,40 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-ERME4TY85K');
-    </script>    
+    </script>
     
+    <style>
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #0E1117; 
+        }
+        iframe { 
+            border: none; 
+            width: 100%; 
+            height: 100%; 
+            display: block; 
+        }
+        
+        /* THE MASK: Covers the bottom 40 pixels of the screen to hide Streamlit logos */
+        .footer-mask {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px; 
+            background-color: #0E1117; /* Perfectly matches your background */
+            z-index: 10; /* Forces it to sit on top of the iframe */
+        }
+    </style>
 </head>
 <body>
     <iframe src="https://ashwa-guru-terminal-ghodekinaal.streamlit.app/?embed=true" allowfullscreen></iframe>
+    
+    <div class="footer-mask"></div>
 </body>
 </html>
