@@ -30,15 +30,21 @@
         html, body { 
             margin: 0; 
             padding: 0; 
-            width: 100vw;  /* Swapped to Viewport Width */
-            height: 100vh; /* Swapped to Viewport Height */
+            width: 100%; 
+            height: 100%; 
             overflow: hidden; 
             background-color: #0E1117; 
         }
+        
         iframe { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%; 
+            height: 100%; 
             border: none; 
-            width: 100vw;  /* Swapped to Viewport Width */
-            height: 100vh; /* Swapped to Viewport Height */
             display: block; 
         }
         
@@ -88,7 +94,7 @@
     </style>
 </head>
 <body>
-    <iframe src="https://ashwa-guru-terminal-ghodekinaal.streamlit.app/?embed=true&embed_options=show_padding:false" allowfullscreen></iframe>
+    <iframe src="https://ashwa-guru-terminal-ghodekinaal.streamlit.app/?embed=true" allowfullscreen></iframe>
     
     <div class="footer-mask"></div>
 
