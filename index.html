@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
     <title>Ashwa Guru</title>
     
@@ -30,15 +30,15 @@
         html, body { 
             margin: 0; 
             padding: 0; 
-            width: 100%; 
-            height: 100%; 
+            width: 100vw;  /* Swapped to Viewport Width */
+            height: 100vh; /* Swapped to Viewport Height */
             overflow: hidden; 
             background-color: #0E1117; 
         }
         iframe { 
             border: none; 
-            width: 100%; 
-            height: 100%; 
+            width: 100vw;  /* Swapped to Viewport Width */
+            height: 100vh; /* Swapped to Viewport Height */
             display: block; 
         }
         
@@ -88,7 +88,7 @@
     </style>
 </head>
 <body>
-    <iframe src="https://ashwa-guru-terminal-ghodekinaal.streamlit.app/?embed=true" allowfullscreen></iframe>
+    <iframe src="https://ashwa-guru-terminal-ghodekinaal.streamlit.app/?embed=true&embed_options=show_padding:false" allowfullscreen></iframe>
     
     <div class="footer-mask"></div>
 
