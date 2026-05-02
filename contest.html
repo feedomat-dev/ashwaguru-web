@@ -59,12 +59,55 @@
     </style>
 </head>
 <body>
-    <iframe src="https://ashwaguru-tipster-contest.hf.space/?embed=true&embed_options=dark_theme" width="100%" height="800"></iframe>
-
+    <!-- 1. Your Custom Back Button (Untouched) -->
     <div class="top-right-buttons">
         <a href="index.html" class="back-button">
             👈 Ashwa Guru Terminal
         </a>
     </div>
+
+    <!-- 2. The Login Screen (Only shows if they haven't logged in) -->
+    <div id="login-container" style="text-align: center; margin-top: 50px; font-family: sans-serif; color: white;">
+        <h2>🔒 Bhejafry Tipsy League</h2>
+        <p>Please enter the global contest password.</p>
+        <input type="password" id="contest-password" placeholder="Password" style="padding: 10px; font-size: 16px; border-radius: 5px; border: none; margin-bottom: 10px;">
+        <br>
+        <button onclick="checkPassword()" style="padding: 10px 20px; font-size: 16px; background-color: #FF4B4B; color: white; border: none; border-radius: 5px; cursor: pointer;">Enter</button>
+        <p id="error-msg" style="color: #FF4B4B; display: none; margin-top: 10px;">❌ Incorrect Password</p>
+    </div>
+
+    <!-- 3. The Container where the Iframe will load AFTER login -->
+    <div id="app-container" style="display: none;"></div>
+
+    <!-- 4. The Brains (Javascript) -->
+    <script>
+        const correctPassword = "bhejafry@123";
+        
+        // This is the VIP URL that bypasses the Streamlit lock
+        const hfAppUrl = "https://ashwaguru-tipster-contest.hf.space/?embed=true&embed_options=dark_theme&auth=bhejafry_unlocked";
+
+        // Check the browser's Local Storage immediately
+        if (localStorage.getItem("bhejafry_access") === "granted") {
+            loadApp();
+        }
+
+        // Check password when button is clicked
+        function checkPassword() {
+            const guess = document.getElementById("contest-password").value;
+            if (guess === correctPassword) {
+                localStorage.setItem("bhejafry_access", "granted");
+                loadApp();
+            } else {
+                document.getElementById("error-msg").style.display = "block";
+            }
+        }
+
+        // Hide login and inject the iframe
+        function loadApp() {
+            document.getElementById("login-container").style.display = "none";
+            document.getElementById("app-container").style.display = "block";
+            document.getElementById("app-container").innerHTML = `<iframe src="${hfAppUrl}" width="100%" height="800" style="border:none;"></iframe>`;
+        }
+    </script>
 </body>
 </html>
